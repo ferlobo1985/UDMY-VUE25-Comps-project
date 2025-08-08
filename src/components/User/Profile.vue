@@ -13,17 +13,22 @@
                 </li>
             </ul>
         </ul>
+        <hr/>
+        <button @click="emit('update-lastname','Michaelson')">Change from the child</button>
     </div>
 </template>
 
 <script setup>
+    const emit = defineEmits(['update-lastname'])
     const props = defineProps({
         alsoKnownAs:String,
         userLastname:String,
         userAge: Number,
         userParents: Object
     })
-    const name = 'Steve'
+    const name = 'Steve';
+
+
 </script>
 
 <style scoped>

@@ -7,6 +7,7 @@
                 :userLastname="data.lastname"
                 :userAge="data.age"
                 :userParents="data.parents"
+                @update-lastname="data.lastname = $event"
             />
             <button @click="updateName">Update name</button>
         </div>
