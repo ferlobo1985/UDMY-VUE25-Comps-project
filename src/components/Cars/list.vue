@@ -5,10 +5,13 @@
                 <span>{{ car.brand }}</span>: {{ car.model }} 
             </li>
         </ul>
+        <hr/>
+        <button @click="updateCar">Update from child</button>
     </div>
 </template>
 
 <script setup>
-     const props = defineProps(['cars'])
+    import { inject } from 'vue';
+    const { cars, updateCar} = inject('cars')
 
 </script>
