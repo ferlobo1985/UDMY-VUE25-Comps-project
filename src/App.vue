@@ -2,12 +2,26 @@
     <div>
         <app-header/>
         <div class="container">
-            Content
+            <UserProfile
+                :alsoKnownAs="data.name"
+                lastname="Jones"
+            />
+            <button @click="updateName">Update name</button>
         </div>
     </div>
 </template>
 
 <script setup>
+    import UserProfile from '@/components/User/Profile.vue';
+    import { reactive } from 'vue';
+
+    const data = reactive({
+        name:'Rocket'
+    })
+
+    const updateName = () => {
+        data.name = "Golden child"
+    }
 
 </script>
 
