@@ -4,13 +4,25 @@
         <ul>
             <li><span>Name:</span> {{ name }}</li>
             <li><span>Know as:</span> {{ alsoKnownAs }}</li>
-            <li><span>Lastname:</span> {{ lastname }}</li>
+            <li><span>Lastname:</span> {{ userLastname }}</li>
+            <li><span>Age:</span> {{ userAge }}</li>
+            <h3>Parents:</h3>
+            <ul>
+                <li v-for="(value,key,index) in userParents" :key="index">
+                    <span>{{ key }}:</span> {{ value }}
+                </li>
+            </ul>
         </ul>
     </div>
 </template>
 
 <script setup>
-    const props = defineProps(['alsoKnownAs','lastname'])
+    const props = defineProps({
+        alsoKnownAs:String,
+        userLastname:String,
+        userAge: Number,
+        userParents: Object
+    })
     const name = 'Steve'
 </script>
 
