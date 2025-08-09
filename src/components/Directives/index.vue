@@ -1,6 +1,8 @@
 <template>
     <div v-awesome.red.big="textToRender"></div>
-    <div v-awesome.blue.small="textToRender"></div>
+    <button @click="textToRender='something else'">
+        Trigger update
+    </button>
 </template>
 
 <script setup>
