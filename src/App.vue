@@ -7,7 +7,10 @@
             <button @click="activeComp=Steve">Steve</button>
             <!-- <Mike v-if="activeComp === Mike"/>
             <Steve v-if="activeComp === Steve"/> -->
-            <component :is="activeComp"/>
+            <KeepAlive include="mike,steve">
+                <component :is="activeComp"/>
+            </KeepAlive>
+           
 
         </div>
     </div>
